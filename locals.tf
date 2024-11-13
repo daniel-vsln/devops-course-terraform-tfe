@@ -7,9 +7,10 @@ locals {
 
   workspace = {
     "devops-course-tfe" = {
-      description    = "Workspace description"
-      execution_mode = "local"
-      project_id     = module.project["devops-course-project"].id
+      description         = "Workspace description"
+      execution_mode      = "remote"
+      project_id          = module.project["devops-course-project"].id
+      vcs_repo_identifier = "daniel-vsln/devops-course-terraform-tfe"
     }
   }
 }
