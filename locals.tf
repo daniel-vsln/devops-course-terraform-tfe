@@ -73,6 +73,25 @@ locals {
         },
       ]
     }
+    "devops-course-product-service-prod" = {
+      description         = "Automation for product service resources."
+      execution_mode      = "remote"
+      project_id          = module.project["devops-course-project"].id
+      vcs_repo_identifier = "${var.github_organization_name}/devops-course-terraform-product-service"
+
+      variables = [
+        {
+          category = "terraform"
+          key      = "cluster_name"
+          value    = "devops-course-daniel-vsln-prod"
+        },
+        {
+          category = "terraform"
+          key      = "environment"
+          value    = "prod"
+        },
+      ]
+    }
   }
 }
 
